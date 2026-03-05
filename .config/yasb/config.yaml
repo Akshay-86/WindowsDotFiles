@@ -39,7 +39,7 @@ bars:
       right: 4
     widgets:
       left:
-#      - "home"
+      - "home"
       - "komorebi_workspaces"
       - "komorebi_active_layout"
       - "active_window"
@@ -47,10 +47,13 @@ bars:
       - "clock"
       - "notes"
       right:
+      - "cava"
       - "media"
+      - "traffic"
       - "weather"
       - "notifications"
-      - "traffic"
+      - "wallpapers"
+      - "update_check"
 widgets:
   home:
     type: "yasb.home.HomeWidget"
@@ -64,6 +67,58 @@ widgets:
       system_menu: true
       power_menu: true
       blur: false
+  power_plan:
+    type: "yasb.power_plan.PowerPlanWidget"
+    options:
+      label: "<span>\uf0e7</span> {active_plan}"
+      label_alt: "<span>\uf0e7</span> Power Plan {active_plan}"
+      update_interval: 5000
+      menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "center"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+      label_shadow:
+        enabled: true
+        color: "black"
+        offset: [1, 1]
+        radius: 3
+      container_shadow:
+        enabled: true
+        color: "#000000"
+        offset: [0, 1]
+        radius: 2
+  update_check:
+    type: "yasb.update_check.UpdateCheckWidget"
+    options:
+      windows_update:
+        enabled: true
+        label: "<span>\uf0ab</span> {count}"
+        interval: 1440
+        exclude: []
+      winget_update:
+        enabled: true
+        label: "<span>\uf0ab</span> {count}"
+        interval: 240
+        exclude: ["Microsoft.Edge"]
+      scoop_update:
+        enabled: true
+        label: "<span>\uf0ab</span> {count}"
+        interval: 240
+        exclude: []
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 3
+        offset: [ 1, 1 ]
   media:
     type: "yasb.media.MediaWidget"
     options:
@@ -106,7 +161,7 @@ widgets:
       scrolling_label:
         enabled: true
         update_interval_ms: 50
-        style: "left"  # can be "left", "right", "bounce", "bounce-ease"
+        style: "bounce-ease"  # can be "left", "right", "bounce", "bounce-ease"
         separator: " | "
         label_padding: 1
       callbacks:
@@ -268,8 +323,8 @@ widgets:
   traffic:
     type: "yasb.traffic.TrafficWidget"
     options:
-      label: "\ueb01 \ueab4 {download_speed} | \ueab7 {upload_speed}"
-      label_alt: "Download {download_speed} | Upload {upload_speed}"
+      label: "\ueb01 \ueab4 {download_speed}"
+      label_alt: "\ueab7 {upload_speed}"
       update_interval: 1000
       menu:
         blur: true
@@ -288,6 +343,22 @@ widgets:
         color: "black"
         radius: 3
         offset: [ 1, 1 ]
+  cava:
+    type: "yasb.cava.CavaWidget"
+    options:
+      bar_height: 20
+      min_bar_height: 0
+      gradient: 1
+      foreground: "#89b4fa"
+      gradient_color_1: '#74c7ec'
+      gradient_color_2: '#89b4fa'
+      gradient_color_3: '#cba6f7'
+      bars_number: 10
+      bar_spacing: 2
+      bar_width: 4
+      bar_type: "bars"
+      framerate: 60
+      hide_empty: true
   notes:
     type: "yasb.notes.NotesWidget"
     options:
@@ -318,3 +389,21 @@ widgets:
         color: "black"
         radius: 3
         offset: [ 1, 1 ]
+  wallpapers:
+    type: "yasb.wallpapers.WallpapersWidget"
+    options:
+      label: "<span>\udb83\ude09</span>"
+      # Example path to folder with images. Can be a single string or a list of strings.
+      image_path: "D:\\Wallpapers" 
+      gallery:
+          enabled: true
+          blur: true
+          image_width: 220           # 1. Reduce this slightly to leave room for CSS borders
+          image_per_page: 8
+          orientation: "landscape" 
+          show_buttons: false
+          image_spacing: 12          # 2. Increase spacing here instead of using CSS margins
+          respect_work_area: false   # 3. Add this to stop the OS from clipping the window edges
+          lazy_load: true
+          lazy_load_fadein: 400
+          image_corner_radius: 12    # This natively rounds the corners without CSS!

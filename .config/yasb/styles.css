@@ -722,3 +722,138 @@ For more information about configuration options, please visit the Wiki https://
 .note-input:focus {
     border: 1px solid #89b4fa;
 }
+
+.power-plan-widget {
+    padding: 0 6px 0 6px;
+}
+.power-plan-widget .label {
+    font-size: 12px;
+}
+.power-plan-widget .icon {
+    font-size: 12px;
+}
+
+.power-plan-menu {
+    background-color: rgba(24, 25, 27, 0.6);
+}
+.power-plan-widget .icon {
+    padding-right: 4px;
+}
+.power-plan-widget .icon.balanced,
+.power-plan-widget .label.balanced {
+    color: #f9e2af;
+}
+.power-plan-widget .icon.high-performance,
+.power-plan-widget .label.high-performance {
+    color: #f38ba8;
+}
+.power-plan-widget .icon.power-saver,
+.power-plan-widget .label.power-saver {
+    color: #89b4fa;
+}
+
+/* Menu Style */
+.power-plan-menu .menu-content {
+    margin: 10px;
+}
+.power-plan-menu .menu-content .button {
+    background-color: transparent;
+    font-weight: 600;
+    font-size: 13px;
+    font-family: 'Segoe UI';
+    padding: 6px 12px;
+    margin: 1px 0;
+    border: none;
+    border-radius: 4px;
+    text-align: left;
+}
+.power-plan-menu .menu-content  .button:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+.power-plan-menu .menu-content .button.active {
+    background-color: rgba(0, 120, 212, 0.1);
+    border: 1px solid rgba(0, 120, 212, 0.4);
+}
+.update-check-widget {
+    padding: 0 4px;
+}
+.update-check-widget .icon {
+    font-size: 14px;
+}
+.update-check-widget .widget-container.winget,
+.update-check-widget .widget-container.scoop,
+.update-check-widget .widget-container.windows {
+    background: #6549e6;
+    margin: 6px 2px;
+    border-radius: 4px;
+    border: 1px solid #8267ff;
+}
+ 
+.update-check-widget .widget-container.paired-left {
+    margin-left: 2px;
+}
+.update-check-widget .widget-container.paired-right {
+    margin-right: 2px;
+}
+.update-check-widget .widget-container.windows {
+    background: #3353e4;
+    border: 1px solid #5574fc;
+}
+.update-check-widget .widget-container.scoop {
+    background: #2b9e78;
+    border: 1px solid #4ac59c;
+}
+.update-check-widget .widget-container.winget .icon,
+.update-check-widget .widget-container.scoop .icon,
+.update-check-widget .widget-container.windows .icon {
+    color: #ffffff;
+    margin: 0 1px 0 6px;
+}
+.update-check-widget .widget-container.winget .label,
+.update-check-widget .widget-container.scoop .label,
+.update-check-widget .widget-container.windows .label {
+    margin: 0 6px 0 1px;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 14px;
+} 
+.cava-widget {
+    padding: 0;
+    margin: 0 10px;
+}
+.cava-widget .bar {
+    background-color: var(--blue);
+}
+.wallpapers-widget {
+    padding: 0 6px 0 6px;
+    margin: 0 5px 0 0;
+}
+.wallpapers-gallery-window {
+    background-color: rgba(85, 42, 240, 0.01);
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+.wallpapers-gallery-buttons {
+    background-color:rgba(255, 255, 255, 0);
+    color: white;
+    border: none;
+    font-size: 14px;
+    padding: 8px 0;
+    border-radius: 8px;
+    margin:0 8px 8px 8px;
+    width: 200px;
+}
+.wallpapers-gallery-buttons:hover {
+    background-color:rgba(255, 255, 255, 0.1)
+}
+.wallpapers-gallery-image {
+    border: 4px solid transparent;
+    border-radius: 16px;
+}
+.wallpapers-gallery-image:hover {
+    border: 4px solid rgb(66, 68, 83);
+}
+.wallpapers-gallery-image.focused {
+    border: 4px solid #89b4fa;
+}
