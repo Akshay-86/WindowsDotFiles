@@ -401,7 +401,7 @@ For more information about configuration options, please visit the Wiki https://
     height: 4px;
 }
 .home-widget {
-    padding: 0 4px 0 12px;
+    padding: 0 4px 0 4px;
 }
 .home-widget .icon {
     color: var(--lavender);
@@ -856,4 +856,80 @@ For more information about configuration options, please visit the Wiki https://
 }
 .wallpapers-gallery-image.focused {
     border: 4px solid #89b4fa;
+}
+.taskbar-widget .app-container {
+    margin: 4px 2px;
+    border-radius: 4px;
+    padding: 0 4px;
+}
+.taskbar-widget .app-container.foreground {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.taskbar-widget .app-container.flashing {
+    background-color: rgba(255, 106, 106, 0.63);
+}
+.taskbar-widget .app-container.running {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+.taskbar-widget .app-container:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+.taskbar-widget .app-container .app-title {
+    padding-left: 4px;
+}
+/* Taskbar preview popup is very limited in styling options, do not use margins/paddings here */
+.taskbar-preview {
+    border-radius: 8px; 
+    background-color: #2b2c2d; 
+}
+.taskbar-preview.flashing { 
+    background-color: #7f434a;
+}
+.taskbar-preview .header {
+    padding-bottom: 12px;
+    padding-top: 4px;
+}
+.taskbar-preview .header .title {
+    color: #d6d6d6;
+    font-family: "Segoe UI";
+    font-weight: 600;
+    font-size: 13px;
+}
+.taskbar-preview .close-button {
+    color: #999;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    min-width: 20px;
+    border-radius: 4px;
+    min-height: 20px;
+}
+.taskbar-preview .close-button:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(226, 0, 0);
+}
+.systeminfo-grouper .container { /* The name of the css class is the name given in the config */
+    background-color: rgba(46, 52, 64, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 4 0px;
+    border-radius: 12px;
+}
+
+.systeminfo-grouper .grouper-button {
+    font-size: 12px;
+    color: #ffffff;
+    padding: 0 8px;
+    background-color: transparent;
+    border: none;
+}
+
+.systeminfo-grouper .grouper-button:hover {
+    color: #88c0d0;
+}
+
+.glazewm-grouper .container {
+    background-color: rgba(46, 52, 64, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 4 0px;
+    border-radius: 12px;
 }
